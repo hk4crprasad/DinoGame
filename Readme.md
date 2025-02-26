@@ -89,7 +89,7 @@ The NEAT (NeuroEvolution of Augmenting Topologies) algorithm works by:
 
 - **Space/Up Arrow**: Jump
 - **Down Arrow**: Duck
-- **P**: Pause game
+- **P**: Pause game (in human player mode)
 - **R**: Restart game
 - **Esc**: Quit
 

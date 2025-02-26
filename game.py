@@ -44,6 +44,7 @@ class DinoGame:
             "Play with Trained AI"
         ]
         self.selected_button = 0
+        self.paused = False  # Add this line for pause functionality
 
     def load_assets(self):
         self.images = {}
@@ -83,6 +84,8 @@ class DinoGame:
                 self.player.jump(True)
             elif key == pygame.K_DOWN:
                 self.player.ducking(True)
+            elif key == pygame.K_p:  # Add P key handling
+                self.paused = not self.paused  # Toggle pause state
         else:
             # AI control handling
             if key == pygame.K_PLUS or key == pygame.K_KP_PLUS:
@@ -97,6 +100,10 @@ class DinoGame:
     def update(self):
         """Update game state based on mode"""
         if menu_state.current_mode == GameMode.PLAYER:
+            # Skip updates if the game is paused
+            if self.paused:
+                return
+            
             self.update_obstacles()
             if not self.player.dead:
                 self.player.update()
@@ -274,6 +281,19 @@ class DinoGame:
                 self.screen.blit(menu_return, 
                                (self.screen.get_width()//2 - menu_return.get_width()//2, 
                                 self.screen.get_height()//2 + 70))
+            
+            # Show pause message when game is paused
+            if menu_state.current_mode == GameMode.PLAYER and self.paused:
+                font = pygame.font.Font(None, 64)
+                pause_text = font.render("PAUSED", True, (0, 0, 255))
+                continue_text = font.render("Press P to continue", True, (0, 0, 0))
+                
+                self.screen.blit(pause_text, 
+                               (self.screen.get_width()//2 - pause_text.get_width()//2, 
+                                self.screen.get_height()//3))
+                self.screen.blit(continue_text, 
+                               (self.screen.get_width()//2 - continue_text.get_width()//2, 
+                                self.screen.get_height()//2))
             
             pygame.display.flip()
 
