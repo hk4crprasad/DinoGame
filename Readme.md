@@ -114,14 +114,6 @@ The repository includes a pre-trained model, but you can train your own:
   </table>
 </div>
 
-## 📊 Performance Metrics
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/hk4crprasad/DinoGame-AI/main/assets/performance.png" alt="Performance Graph" width="600">
-  <br>
-  <em>Fitness improvement over generations</em>
-</div>
-
 ## 📝 License
 
 MIT License
