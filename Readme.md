@@ -68,7 +68,7 @@ The NEAT (NeuroEvolution of Augmenting Topologies) algorithm works by:
 - 🌐 Speciation to protect innovation
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/hk4crprasad/DinoGame-AI/main/assets/network.png" alt="Neural Network" width="500">
+  <img src="https://raw.githubusercontent.com/hk4crprasad/DinoGame-AI/main/assets/train.jpg" alt="Neural Network" width="500">
   <br>
   <em>Example of a neural network evolving over time</em>
 </div>
